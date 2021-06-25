@@ -59,8 +59,7 @@ az storage container create -n tfstate --account-name <YourAzureStorageAccountNa
 # If correct will come up with created: true
 
 # Then create the kluster using your storage account name and key:
-terraform init -backend-config="storage_account_name=<YourAzureStorageAccountName>" -backend-config="container_name=tfstate" /
--backend-config="access_key=<YourStorageAccountAccessKey>" -backend-config="key=codelab.microsoft.tfstate"
+terraform init -backend-config="storage_account_name=<YourAzureStorageAccountName>" -backend-config="container_name=tfstate" -backend-config="access_key=<YourStorageAccountAccessKey>" -backend-config="key=codelab.microsoft.tfstate"
 
 # Assuming all is well export your service principal app id and password:
 export TF_VAR_client_id=<service-principal-appid>
@@ -90,4 +89,15 @@ terraform plan -out out.plan
 
 # Terraform apply:
 terraform apply out.plan
+
+# Extras:
+# This is how you connect to kubernetes: / install the kubectl
+sudo az aks install-cli
+
+#This is how you download credentials to be used by the kubernetes cli:
+az aks get-credentials --resource-group <resource_group_name> --name <cluster_name>
+
+# Verify your connection to the cluster using:
+kubectl get nodes
+
 
