@@ -96,7 +96,8 @@ sudo az aks install-cli
 
 #This is how you download credentials to be used by the kubernetes cli:
 az aks get-credentials --resource-group <resource_group_name> --name <cluster_name>
-
+#For this specific set of files:
+az aks get-credentials --resource-group azure-k8stest --name group-project-k8s
 # Verify your connection to the cluster using:
 kubectl get nodes
 

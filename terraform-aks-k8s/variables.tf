@@ -1,4 +1,21 @@
 
+
+
+
+
+
+
+variable "project_name" {
+    default = "group-project"
+}
+
+
+
+
+
+
+//AKS CLUSTER VARIABLES:
+
 variable "client_id" {}
 variable "client_secret" {}
 
@@ -14,16 +31,18 @@ variable "dns_prefix" {
     default = "k8stest"
 }
 
-variable cluster_name {
-    default = "k8stest"
-}
 
 variable resource_group_name {
     default = "azure-k8stest"
 }
 
-variable location {
+
+variable cluster_location {
     default = "ukwest"
+}
+
+variable location {
+    default = "uksouth"
 }
 
 variable log_analytics_workspace_name {
