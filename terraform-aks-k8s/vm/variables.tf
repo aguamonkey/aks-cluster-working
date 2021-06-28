@@ -11,3 +11,6 @@ variable "storage_size" {
     default = "Standard_LRS"
 }
 
+variable "ssh_public_key" {
+    default = "~/.ssh/id_rsa.pub"
+}
