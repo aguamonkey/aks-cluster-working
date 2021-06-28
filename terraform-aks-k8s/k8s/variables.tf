@@ -21,9 +21,13 @@ variable resource_group_name {
     default = "azure-k8stest"
 }
 
-variable location {
-    default = "ukwest"
-}
+variable "project_name" {}
+variable "group_name" {}
+variable "cluster_location" {}
+
+//variable location {
+//    default = "ukwest"
+//}
 
 variable log_analytics_workspace_name {
     default = "testLogAnalyticsWorkspaceName"
