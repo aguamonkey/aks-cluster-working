@@ -3,6 +3,7 @@ terraform {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "=2.46.0"
+
     }
   }
 }
@@ -10,6 +11,8 @@ terraform {
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
+
+
 }
 
 resource "azurerm_resource_group" "k8s" {
@@ -43,6 +46,6 @@ module "aks-cluster" {
   group_name    = azurerm_resource_group.k8s.name
   cluster_location = var.cluster_location
   client_id = var.client_id
-  client_secret = var.client_secret
+ // client_secret = var.client_secret
 
 }
