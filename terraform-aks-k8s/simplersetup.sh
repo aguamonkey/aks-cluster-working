@@ -8,6 +8,7 @@ sudo apt update
 
 # Install the azure CLI:
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+az login
 
 #Install Terraform:
 sudo apt update && sudo apt upgrade -y
@@ -60,3 +61,9 @@ az aks get-credentials --resource-group <resource_group_name> --name <cluster_na
 az aks get-credentials --resource-group azure-k8stest --name group-project-k8s
 # Verify your connection to the cluster using:
 kubectl get nodes
+
+#If you get an error at any point about importing a resource into the state run the folloing commands:
+az group show --name <resource_group_name>
+#Then copy the id that comes up
+#Then run. #First <azure_resource_group> then your label you've set could be "main" and finally the id you got above
+terraform import <Terraform Resource Name>.<Resource Label> <Azure Resource ID>
