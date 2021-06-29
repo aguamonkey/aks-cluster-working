@@ -1,23 +1,11 @@
-
-
-
-
-
-
-
 variable "project_name" {
     default = "group-project"
 }
 
-
-
-
-
-
 //AKS CLUSTER VARIABLES:
 
 variable "client_id" {}
-variable "client_secret" {}
+//variable "client_secret" {}
 
 variable "agent_count" {
     default = 2
