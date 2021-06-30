@@ -15,7 +15,7 @@ resource "azurerm_linux_virtual_machine" "main" {
     network_interface_ids = var.interface_ids
 
     admin_username = "adminuser"
-    admin_password = "LetMeIn!"
+ 
 
     disable_password_authentication = false
 
